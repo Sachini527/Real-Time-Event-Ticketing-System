@@ -1,4 +1,4 @@
-import java.io.Serializable;
+import java.io.*;
 import java.util.Scanner;
 
 public class Configuration implements Serializable {
@@ -42,5 +42,24 @@ public class Configuration implements Serializable {
             }
         }
         return value;
+    }
+
+    public void saveToTextFile(String filename) throws IOException {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
+            writer.write("totalTickets=" + totalTickets + "\n");
+            writer.write("ticketReleaseRate=" + ticketReleaseRate + "\n");
+            writer.write("customerRetrievalRate=" + customerRetrievalRate + "\n");
+            writer.write("maxTicketCapacity=" + maxTicketCapacity + "\n");
+        }
+    }
+
+    public static Configuration loadFromTextFile(String filename) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            int totalTickets = Integer.parseInt(reader.readLine().split("=")[1]);
+            int ticketReleaseRate = Integer.parseInt(reader.readLine().split("=")[1]);
+            int customerRetrievalRate = Integer.parseInt(reader.readLine().split("=")[1]);
+            int maxTicketCapacity = Integer.parseInt(reader.readLine().split("=")[1]);
+            return new Configuration(totalTickets, ticketReleaseRate, customerRetrievalRate, maxTicketCapacity);
+        }
     }
 }
