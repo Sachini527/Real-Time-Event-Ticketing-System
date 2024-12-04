@@ -17,14 +17,30 @@ public class Configuration implements Serializable {
 
     public static Configuration promptForConfiguration() {
         Scanner input = new Scanner(System.in);
-        System.out.println("Enter total number of tickets: ");
-        int totalTickets = input.nextInt();
-        System.out.println("Enter ticket release rate: ");
-        int ticketReleaseRate = input.nextInt();
-        System.out.println("Enter customer retrieval rate: ");
-        int customerRetrievalRate = input.nextInt();
-        System.out.println("Enter maximum ticket capacity: ");
-        int maxTicketCapacity = input.nextInt();
+        int totalTickets = promptForInt(input, "Enter total number of tickets: ");
+        int ticketReleaseRate = promptForInt(input, "Enter ticket release rate: ");
+        int customerRetrievalRate = promptForInt(input, "Enter customer retrieval rate: ");
+        int maxTicketCapacity = promptForInt(input, "Enter maximum ticket capacity: ");
         return new Configuration(totalTickets, ticketReleaseRate, customerRetrievalRate, maxTicketCapacity);
+
+    }
+
+    private static int promptForInt(Scanner input, String prompt) {
+        int value;
+        while (true) {
+            System.out.print(prompt);
+            if (input.hasNextInt()) {
+                value = input.nextInt();
+                if (value > 0) {
+                    break;
+                } else {
+                    System.out.println("Please enter a positive integer.");
+                }
+            } else {
+                System.out.println("Invalid input. Please enter a valid integer.");
+                input.next(); // clear the invalid input
+            }
+        }
+        return value;
     }
 }
