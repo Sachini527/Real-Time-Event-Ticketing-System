@@ -15,16 +15,20 @@ public class Configuration implements Serializable {
         this.maxTicketCapacity = maxTicketCapacity;
     }
 
+    // Method to prompt the user for configuration parameters
     public static Configuration promptForConfiguration() {
         Scanner input = new Scanner(System.in);
+        // prompt the user for configuration parameters
         int totalTickets = promptForInt(input, "Enter total number of tickets: ");
         int ticketReleaseRate = promptForInt(input, "Enter ticket release rate: ");
         int customerRetrievalRate = promptForInt(input, "Enter customer retrieval rate: ");
         int maxTicketCapacity = promptForInt(input, "Enter maximum ticket capacity: ");
+        // return a new Configuration object with the user's input
         return new Configuration(totalTickets, ticketReleaseRate, customerRetrievalRate, maxTicketCapacity);
 
     }
 
+    // method to prompt for an integer and validate the input
     private static int promptForInt(Scanner input, String prompt) {
         int value;
         while (true) {
@@ -44,6 +48,7 @@ public class Configuration implements Serializable {
         return value;
     }
 
+    // method to save the configuration to a text file
     public void saveToTextFile(String filename) throws IOException {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) {
             writer.write("totalTickets=" + totalTickets + "\n");
@@ -53,12 +58,15 @@ public class Configuration implements Serializable {
         }
     }
 
+    // method to load the configuration from a text file
     public static Configuration loadFromTextFile(String filename) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
+            // read the configuration parameters from the file
             int totalTickets = Integer.parseInt(reader.readLine().split("=")[1]);
             int ticketReleaseRate = Integer.parseInt(reader.readLine().split("=")[1]);
             int customerRetrievalRate = Integer.parseInt(reader.readLine().split("=")[1]);
             int maxTicketCapacity = Integer.parseInt(reader.readLine().split("=")[1]);
+            // return a new Configuration object with the loaded parameters
             return new Configuration(totalTickets, ticketReleaseRate, customerRetrievalRate, maxTicketCapacity);
         }
     }
