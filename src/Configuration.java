@@ -41,7 +41,7 @@ public class Configuration implements Serializable {
                     System.out.println("Please enter a positive integer.");
                 }
             } else {
-                System.out.println("Invalid input. Please enter a valid integer.");
+                System.out.println("Invalid input. Please enter a number.");
                 input.next(); // clear the invalid input
             }
         }
