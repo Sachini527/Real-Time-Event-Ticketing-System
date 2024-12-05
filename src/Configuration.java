@@ -15,6 +15,22 @@ public class Configuration implements Serializable {
         this.maxTicketCapacity = maxTicketCapacity;
     }
 
+    public int getTotalTickets(){
+        return this.totalTickets;
+    }
+
+    public int getTicketReleaseRate(){
+        return this.ticketReleaseRate;
+    }
+
+    public int getCustomerRetrievalRate(){
+        return this.customerRetrievalRate;
+    }
+
+    public int getMaxTicketCapacity(){
+        return this.maxTicketCapacity;
+    }
+
     // Method to prompt the user for configuration parameters
     public static Configuration promptForConfiguration() {
         Scanner input = new Scanner(System.in);
