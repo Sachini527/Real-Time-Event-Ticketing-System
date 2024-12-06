@@ -2,6 +2,7 @@ package config;
 
 import java.io.*;
 import java.util.Scanner;
+
 import logging.Logger;
 
 public class Configuration implements Serializable {
@@ -18,31 +19,35 @@ public class Configuration implements Serializable {
         this.maxTicketCapacity = maxTicketCapacity;
     }
 
-    public int getTotalTickets(){
+    public int getTotalTickets() {
         return this.totalTickets;
     }
 
-    public int getTicketReleaseRate(){
+    public int getTicketReleaseRate() {
         return this.ticketReleaseRate;
     }
 
-    public int getCustomerRetrievalRate(){
+    public int getCustomerRetrievalRate() {
         return this.customerRetrievalRate;
     }
 
-    public int getMaxTicketCapacity(){
+    public int getMaxTicketCapacity() {
         return this.maxTicketCapacity;
     }
 
     // Method to prompt the user for configuration parameters
     public static Configuration promptForConfiguration() {
         Scanner input = new Scanner(System.in);
+        // Call the log method from the Logger class
         Logger.log("Starting configuration prompt...");
         // prompt the user for configuration parameters
         int totalTickets = promptForInt(input, "Enter total number of tickets: ");
         int ticketReleaseRate = promptForInt(input, "Enter ticket release rate: ");
         int customerRetrievalRate = promptForInt(input, "Enter customer retrieval rate: ");
         int maxTicketCapacity = promptForInt(input, "Enter maximum ticket capacity: ");
+
+        // Call the log method from the Logger class
+        Logger.log("Configuration prompt completed.");
         // return a new config.Configuration object with the user's input
         return new Configuration(totalTickets, ticketReleaseRate, customerRetrievalRate, maxTicketCapacity);
     }
@@ -57,7 +62,7 @@ public class Configuration implements Serializable {
                 if (value > 0) {
                     break;
                 } else {
-                    System.out.println("Please enter a positive integer.");
+                    System.out.println("Please enter a positive value.");
                 }
             } else {
                 System.out.println("Invalid input. Please enter a number.");
