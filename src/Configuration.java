@@ -1,9 +1,5 @@
-package config;
-
 import java.io.*;
 import java.util.Scanner;
-
-import logging.Logger;
 
 public class Configuration implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -19,22 +15,6 @@ public class Configuration implements Serializable {
         this.maxTicketCapacity = maxTicketCapacity;
     }
 
-    public int getTotalTickets() {
-        return this.totalTickets;
-    }
-
-    public int getTicketReleaseRate() {
-        return this.ticketReleaseRate;
-    }
-
-    public int getCustomerRetrievalRate() {
-        return this.customerRetrievalRate;
-    }
-
-    public int getMaxTicketCapacity() {
-        return this.maxTicketCapacity;
-    }
-
     // Method to prompt the user for configuration parameters
     public static Configuration promptForConfiguration() {
         Scanner input = new Scanner(System.in);
@@ -48,7 +28,7 @@ public class Configuration implements Serializable {
 
         // Call the log method from the Logger class
         Logger.log("Configuration prompt completed.");
-        // return a new config.Configuration object with the user's input
+        // return a new Configuration object with the user's input
         return new Configuration(totalTickets, ticketReleaseRate, customerRetrievalRate, maxTicketCapacity);
     }
 
@@ -80,7 +60,7 @@ public class Configuration implements Serializable {
             int ticketReleaseRate = Integer.parseInt(reader.readLine().split("=")[1]);
             int customerRetrievalRate = Integer.parseInt(reader.readLine().split("=")[1]);
             int maxTicketCapacity = Integer.parseInt(reader.readLine().split("=")[1]);
-            // return a new config.Configuration object with the loaded parameters
+            // return a new Configuration object with the loaded parameters
             return new Configuration(totalTickets, ticketReleaseRate, customerRetrievalRate, maxTicketCapacity);
         }
     }

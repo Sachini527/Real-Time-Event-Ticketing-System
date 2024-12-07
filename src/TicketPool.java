@@ -5,7 +5,7 @@ import java.util.List;
 public class TicketPool {
     private final List<String> tickets = Collections.synchronizedList(new ArrayList<>());
 
-    public  void addTickets(int numberOfTickets) {
+    public void addTickets(int numberOfTickets) {
         synchronized (tickets) {
             for (int i = 0; i < numberOfTickets; i++) {
                 tickets.add("Ticket " + (tickets.size() + 1));

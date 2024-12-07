@@ -1,5 +1,3 @@
-import config.Configuration;
-
 import java.io.IOException;
 
 public class Main {
