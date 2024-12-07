@@ -1,0 +1,25 @@
+=== Log Started ===
+[2024-12-07 00:20:31] [INFO] Starting Ticket Management System...
+[2024-12-07 00:20:47] [INFO] Configuration set: {"totalTickets":10,"ticketReleaseRate":2,"customerRetrievalRate":1,"maxTicketCapacity":20}
+[2024-12-07 00:20:51] [INFO] Ticket added: 1
+[2024-12-07 00:20:51] [INFO] Ticket retrieved: 1
+[2024-12-07 00:20:51] [INFO] Ticket added: 2
+[2024-12-07 00:20:52] [INFO] Ticket retrieved: 2
+[2024-12-07 00:20:52] [INFO] Ticket added: 3
+[2024-12-07 00:20:52] [INFO] Ticket added: 4
+[2024-12-07 00:20:53] [INFO] Ticket retrieved: 3
+[2024-12-07 00:20:53] [INFO] Ticket added: 5
+[2024-12-07 00:20:53] [INFO] Ticket added: 6
+[2024-12-07 00:20:54] [INFO] Ticket retrieved: 4
+[2024-12-07 00:20:54] [INFO] Ticket added: 7
+[2024-12-07 00:20:54] [INFO] Ticket added: 8
+[2024-12-07 00:20:55] [INFO] Ticket retrieved: 5
+[2024-12-07 00:20:55] [INFO] Ticket added: 9
+[2024-12-07 00:20:55] [INFO] Ticket added: 10
+[2024-12-07 00:20:56] [INFO] Ticket retrieved: 6
+[2024-12-07 00:20:57] [INFO] Ticket retrieved: 7
+[2024-12-07 00:20:58] [INFO] Ticket retrieved: 8
+[2024-12-07 00:20:59] [INFO] Ticket retrieved: 9
+[2024-12-07 00:21:00] [INFO] Ticket retrieved: 10
+[2024-12-07 00:21:01] [INFO] All tickets processed.
+[2024-12-07 00:21:01] [INFO] System restarting with new configuration...

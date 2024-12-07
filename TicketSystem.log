@@ -1,0 +1,142 @@
+Dec 07, 2024 3:50:30 AM org.example.Logger log
+INFO: Starting Ticket Management System...
+Dec 07, 2024 3:50:46 AM org.example.Logger log
+INFO: Configuration set: TotalTickets=50, TicketReleaseRate=4, CustomerRetrieveRate=2, MaxTicketCapacity=10
+Dec 07, 2024 3:50:46 AM org.example.Logger log
+INFO: Configuration set: org.example.Configuration@497470ed
+Dec 07, 2024 3:50:55 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 4
+Dec 07, 2024 3:50:55 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 8
+Dec 07, 2024 3:50:55 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 12
+Dec 07, 2024 3:50:55 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 10
+Dec 07, 2024 3:50:55 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 8
+Dec 07, 2024 3:50:55 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 6
+Dec 07, 2024 3:50:55 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 4
+Dec 07, 2024 3:50:55 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 2
+Dec 07, 2024 3:50:55 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 0
+Dec 07, 2024 3:50:56 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 4
+Dec 07, 2024 3:50:56 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 8
+Dec 07, 2024 3:50:56 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 12
+Dec 07, 2024 3:50:56 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 10
+Dec 07, 2024 3:50:56 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 8
+Dec 07, 2024 3:50:56 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 6
+Dec 07, 2024 3:50:56 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 4
+Dec 07, 2024 3:50:56 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 2
+Dec 07, 2024 3:50:56 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 0
+Dec 07, 2024 3:50:57 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 4
+Dec 07, 2024 3:50:57 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 8
+Dec 07, 2024 3:50:57 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 12
+Dec 07, 2024 3:50:57 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 10
+Dec 07, 2024 3:50:57 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 8
+Dec 07, 2024 3:50:57 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 6
+Dec 07, 2024 3:50:57 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 4
+Dec 07, 2024 3:50:57 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 2
+Dec 07, 2024 3:50:57 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 0
+Dec 07, 2024 3:50:58 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 4
+Dec 07, 2024 3:50:58 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 8
+Dec 07, 2024 3:50:58 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 12
+Dec 07, 2024 3:50:58 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 10
+Dec 07, 2024 3:50:58 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 8
+Dec 07, 2024 3:50:58 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 6
+Dec 07, 2024 3:50:58 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 4
+Dec 07, 2024 3:50:58 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 2
+Dec 07, 2024 3:50:58 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 0
+Dec 07, 2024 3:50:59 AM org.example.Logger log
+INFO: Produced 2 tickets. Available: 2
+Dec 07, 2024 3:50:59 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 0
+Dec 07, 2024 3:51:00 AM org.example.Logger log
+INFO: All tickets processed.
+Dec 07, 2024 3:51:14 AM org.example.Logger log
+INFO: System restarting with new configuration...
+Dec 07, 2024 3:51:36 AM org.example.Logger log
+INFO: Configuration set: TotalTickets=30, TicketReleaseRate=4, CustomerRetrieveRate=2, MaxTicketCapacity=5
+Dec 07, 2024 3:51:36 AM org.example.Logger log
+INFO: Configuration set: org.example.Configuration@3d71d552
+Dec 07, 2024 3:51:44 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 4
+Dec 07, 2024 3:51:44 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 8
+Dec 07, 2024 3:51:45 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 6
+Dec 07, 2024 3:51:45 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 4
+Dec 07, 2024 3:51:45 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 2
+Dec 07, 2024 3:51:45 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 0
+Dec 07, 2024 3:51:46 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 4
+Dec 07, 2024 3:51:46 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 8
+Dec 07, 2024 3:51:47 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 6
+Dec 07, 2024 3:51:47 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 4
+Dec 07, 2024 3:51:47 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 2
+Dec 07, 2024 3:51:47 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 0
+Dec 07, 2024 3:51:47 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 4
+Dec 07, 2024 3:51:47 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 8
+Dec 07, 2024 3:51:48 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 6
+Dec 07, 2024 3:51:48 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 4
+Dec 07, 2024 3:51:48 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 2
+Dec 07, 2024 3:51:48 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 0
+Dec 07, 2024 3:51:48 AM org.example.Logger log
+INFO: Produced 4 tickets. Available: 4
+Dec 07, 2024 3:51:48 AM org.example.Logger log
+INFO: Produced 2 tickets. Available: 6
+Dec 07, 2024 3:51:49 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 4
+Dec 07, 2024 3:51:49 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 2
+Dec 07, 2024 3:51:49 AM org.example.Logger log
+INFO: Consumed 2 tickets. Available: 0
+Dec 07, 2024 3:51:50 AM org.example.Logger log
+INFO: All tickets processed.
+Dec 07, 2024 3:51:54 AM org.example.Logger log
+INFO: System stopped by user.
+Dec 07, 2024 3:51:54 AM org.example.Logger log
+INFO: Exiting Ticket Management System...
