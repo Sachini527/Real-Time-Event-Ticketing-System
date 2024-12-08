@@ -1,61 +1,5 @@
 package org.example;
 
-import java.util.Scanner;
-
-public class Main {
-    public static void main(String[] args) {
-        Logger.log("Starting Ticket Management System...");
-
-        Scanner scanner = new Scanner(System.in);
-        boolean keepRunning = true;
-
-        while (keepRunning) {
-            try {
-                Configuration configuration = new Configuration();
-                configuration.setup();
-                TicketPool ticketPool = new TicketPool(configuration);
-
-                Logger.log("Configuration set: " + configuration);
-                System.out.println("Start the system? (yes/no)");
-                String userResponse = scanner.nextLine().trim().toLowerCase();
-
-                if (userResponse.equals("yes")) {
-                    Thread vendorThread = new Thread(new Vendor(ticketPool, configuration));
-                    Thread customerThread = new Thread(new Customer(ticketPool, configuration));
-
-                    vendorThread.start();
-                    customerThread.start();
-
-                    vendorThread.join();
-                    customerThread.join();
-
-                    Logger.log("All tickets processed.");
-
-                    System.out.println("All tickets processed. Stop the system? (yes/no)");
-                    userResponse = scanner.nextLine().trim().toLowerCase();
-
-                    if (userResponse.equals("yes")) {
-                        keepRunning = false;
-                        Logger.log("System stopped by user.");
-                    } else {
-                        Logger.log("System restarting with new configuration...");
-                    }
-                } else {
-                    Logger.log("System not started. Exiting...");
-                    keepRunning = false;
-                }
-            } catch (Exception e) {
-                Logger.logError("An error occurred: " + e.getMessage());
-                e.printStackTrace();
-            }
-        }
-
-        Logger.log("Exiting Ticket Management System...");
-        System.out.println("System terminated.");
-    }
-}
-
-/*
 public class Main {
     public static void main(String[] args) {
         Configuration configuration = new Configuration();
@@ -96,4 +40,4 @@ public class Main {
         }
     }
 }
-*/
+
