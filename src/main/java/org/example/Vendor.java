@@ -11,18 +11,29 @@ public class Vendor implements Runnable {
 
     @Override
     public void run() {
-        while (!Thread.currentThread().isInterrupted() && !ticketPool.isFull()) {
-            ticketPool.addTickets(releaseRate);
+        while (!Thread.currentThread().isInterrupted()) {
+            synchronized (ticketPool) {
+                if (ticketPool.isFull()) {
+                    Logger.info("Maximum ticket capacity reached. Vendor stops adding tickets.");
+                    ticketPool.notifyAll(); // Notify customers waiting on tickets
+                    break; // Exit the loop and terminate the vendor thread
+                }
+                ticketPool.addTickets(releaseRate);
+                ticketPool.notifyAll(); // Notify customers after adding tickets
+            }
             try {
-                Thread.sleep(1000);
+                Thread.sleep(1000); // Simulate one-second tick
             } catch (InterruptedException e) {
-                Logger.warn("TicketVendor interrupted.");
+                Logger.warn("Vendor thread interrupted.");
                 Thread.currentThread().interrupt();
             }
         }
-        Logger.info("TicketVendor stopped as the pool reached maximum capacity.");
+        Logger.info("Vendor stopped adding tickets. No more tickets will be added.");
     }
 }
+
+
+
 
 
 

@@ -11,20 +11,35 @@ public class Customer implements Runnable {
 
     @Override
     public void run() {
-        while (!Thread.currentThread().isInterrupted() && !ticketPool.isEmpty()) {
-            for (int i = 0; i < retrievalRate; i++) {
-                ticketPool.removeTicket();
+        while (!Thread.currentThread().isInterrupted()) {
+            synchronized (ticketPool) {
+                for (int i = 0; i < retrievalRate; i++) {
+                    while (ticketPool.isEmpty()) {
+                        Logger.info("No tickets available. Customer is waiting.");
+                        try {
+                            ticketPool.wait(); // Wait for tickets to be added
+                        } catch (InterruptedException e) {
+                            Logger.warn("Customer thread interrupted.");
+                            Thread.currentThread().interrupt();
+                            return;
+                        }
+                    }
+                    ticketPool.removeTicket(); // Retrieve a ticket
+                }
+                ticketPool.notifyAll(); // Notify vendor if tickets fall below max capacity
             }
             try {
-                Thread.sleep(1000);
+                Thread.sleep(1000); // Simulate one-second tick
             } catch (InterruptedException e) {
-                Logger.warn("TicketCustomer interrupted.");
+                Logger.warn("Customer thread interrupted.");
                 Thread.currentThread().interrupt();
             }
         }
-        Logger.info("TicketCustomer stopped as the pool is empty.");
+        Logger.info("Customer stopped retrieving tickets. No more tickets will be retrieved.");
     }
 }
+
+
 
 
 

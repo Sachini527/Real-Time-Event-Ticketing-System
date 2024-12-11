@@ -14,27 +14,29 @@ public class Configuration {
 
         while (true) {
             try {
-                System.out.print("Enter total tickets (must be greater than 0): ");
+                System.out.print("\nEnter total tickets (must be greater than 0): ");
                 totalTickets = Integer.parseInt(scanner.nextLine());
-                if (totalTickets <= 0) throw new IllegalArgumentException();
+                if (totalTickets <= 0) throw new IllegalArgumentException("Total tickets must be greater than 0.");
 
                 System.out.print("Enter ticket release rate (must be greater than 0): ");
                 ticketReleaseRate = Integer.parseInt(scanner.nextLine());
-                if (ticketReleaseRate <= 0) throw new IllegalArgumentException();
+                if (ticketReleaseRate <= 0) throw new IllegalArgumentException("Ticket release rate must be greater than 0.");
 
                 System.out.print("Enter customer retrieval rate (must be greater than 0): ");
                 ticketRetrievalRate = Integer.parseInt(scanner.nextLine());
-                if (ticketRetrievalRate <= 0) throw new IllegalArgumentException();
+                if (ticketRetrievalRate <= 0) throw new IllegalArgumentException("Customer retrieval rate must be greater than 0.");
 
                 System.out.print("Enter max ticket capacity (must be greater than total tickets): ");
                 maxCapacity = Integer.parseInt(scanner.nextLine());
-                if (maxCapacity <= 0 || maxCapacity <= totalTickets) throw new IllegalArgumentException();
+                if (maxCapacity <= totalTickets) throw new IllegalArgumentException("Max capacity must be greater than total tickets.");
 
                 System.out.println("Configuration set successfully.");
                 saveConfiguration();
                 break;
+            } catch (IllegalArgumentException e) {
+                Logger.error("Invalid input: " + e.getMessage());
             } catch (Exception e) {
-                Logger.error("Invalid input. Please try again.");
+                Logger.error("Unexpected error: " + e.getMessage());
             }
         }
     }
@@ -45,7 +47,7 @@ public class Configuration {
             writer.write(ticketReleaseRate + "\n");
             writer.write(ticketRetrievalRate + "\n");
             writer.write(maxCapacity + "\n");
-            System.out.println("Configuration saved successfully to config.txt.");
+            Logger.info("Configuration saved successfully to config.txt.");
         } catch (IOException e) {
             Logger.error("Failed to save configuration: " + e.getMessage());
         }
@@ -81,6 +83,8 @@ public class Configuration {
         return maxCapacity;
     }
 }
+
+
 
 
 

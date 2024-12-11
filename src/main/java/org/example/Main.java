@@ -7,7 +7,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         do {
-            System.out.println("Welcome to the Real-Time Ticket Management System!");
+            System.out.println("\n*** Welcome to the Real-Time Ticket Management System ***");
 
             Configuration config = new Configuration();
 
@@ -21,10 +21,13 @@ public class Main {
             }
 
             TicketPool ticketPool = new TicketPool(config.getMaxCapacity());
-            Logger.enableLogging(); // Reset logging for each system run
+            Logger.enableLogging();
 
-            Thread vendorThread = new Thread(new Vendor(ticketPool, config.getTicketReleaseRate()));
-            Thread customerThread = new Thread(new Customer(ticketPool, config.getTicketRetrievalRate()));
+            Vendor vendor = new Vendor(ticketPool, config.getTicketReleaseRate());
+            Customer customer = new Customer(ticketPool, config.getTicketRetrievalRate());
+
+            Thread vendorThread = new Thread(vendor);
+            Thread customerThread = new Thread(customer);
 
             vendorThread.start();
             customerThread.start();
@@ -44,11 +47,13 @@ public class Main {
 
             Logger.info("System terminated.");
 
-            System.out.print("\nDo you want to restart the system? (yes/no): ");
+            System.out.print("Do you want to restart the system? (yes/no): ");
         } while (scanner.nextLine().trim().equalsIgnoreCase("yes"));
 
         System.out.println("\nThank you for using our service. Have a nice day!");
     }
 }
+
+
 
 
