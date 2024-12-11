@@ -1,29 +1,54 @@
 package org.example;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.util.logging.FileHandler;
-import java.util.logging.Level;
-import java.util.logging.SimpleFormatter;
+import java.time.LocalDateTime;
 
 public class Logger {
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger("TicketSystemLogger");
+    private static final String LOG_FILE = "logs.txt";
 
-    static {
-        try {
-            FileHandler fh = new FileHandler("TicketSystem.log");
-            fh.setFormatter(new SimpleFormatter());
-            logger.addHandler(fh);
-        } catch (IOException e) {
-            System.out.println("Error initializing logger: " + e.getMessage());
+    private static boolean loggingEnabled = true;
+
+    public static void enableLogging() {
+        loggingEnabled = true;
+    }
+
+    public static void disableLogging() {
+        loggingEnabled = false;
+    }
+
+    public static void info(String message) {
+        if (loggingEnabled) {
+            log("INFO: " + message);
         }
     }
 
-    public static void log(String message) {
-        logger.info(message);
+    public static void warn(String message) {
+        if (loggingEnabled) {
+            log("WARN: " + message);
+        }
     }
 
-    public static void logError(String message) {
-        logger.log(Level.SEVERE, message);
+    public static void error(String message) {
+        if (loggingEnabled) {
+            log("ERROR: " + message);
+        }
+    }
+
+    private static void log(String message) {
+        String timeStampedMessage = LocalDateTime.now() + ": " + message;
+        System.out.println("\u001B[31m" + timeStampedMessage + "\u001B[0m"); // ANSI escape code for red text
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(LOG_FILE, true))) {
+            writer.write(timeStampedMessage);
+            writer.newLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
+
+
+
+
 

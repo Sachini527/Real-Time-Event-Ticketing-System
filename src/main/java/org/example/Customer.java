@@ -2,26 +2,30 @@ package org.example;
 
 public class Customer implements Runnable {
     private final TicketPool ticketPool;
-    private final Configuration config;
+    private final int retrievalRate;
 
-    public Customer(TicketPool ticketPool, Configuration config) {
+    public Customer(TicketPool ticketPool, int retrievalRate) {
         this.ticketPool = ticketPool;
-        this.config = config;
+        this.retrievalRate = retrievalRate;
     }
 
     @Override
     public void run() {
-        while (!ticketPool.isProcessingComplete()) {
-            boolean consumed = ticketPool.consumeTickets(config.getCustomerRetrieveRate());
-            if (!consumed) {
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    Logger.logError("Customer interrupted: " + e.getMessage());
-                    Thread.currentThread().interrupt();
-                }
+        while (!Thread.currentThread().isInterrupted() && !ticketPool.isEmpty()) {
+            for (int i = 0; i < retrievalRate; i++) {
+                ticketPool.removeTicket();
+            }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                Logger.warn("TicketCustomer interrupted.");
+                Thread.currentThread().interrupt();
             }
         }
+        Logger.info("TicketCustomer stopped as the pool is empty.");
     }
 }
+
+
+
 

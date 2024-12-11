@@ -1,43 +1,54 @@
 package org.example;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-        Configuration configuration = new Configuration();
-        configuration.setup();
+        Scanner scanner = new Scanner(System.in);
 
-        while (true) {
-            System.out.println("System ready. Type 'start' to run or 'exit' to quit.");
-            String command = configuration.getScanner().next().trim().toLowerCase();
+        do {
+            System.out.println("Welcome to the Real-Time Ticket Management System!");
 
-            if ("exit".equals(command)) {
-                System.out.println("Exiting system...");
-                Logger.log("System exited by user.");
-                break;
-            } else if ("start".equals(command)) {
-                TicketPool ticketPool = new TicketPool(configuration);
-                Thread vendorThread = new Thread(new Vendor(ticketPool, configuration));
-                Thread customerThread = new Thread(new Customer(ticketPool, configuration));
+            Configuration config = new Configuration();
 
-                vendorThread.start();
-                customerThread.start();
+            System.out.print("\nLoad configuration from file? (yes/no): ");
+            String choice = scanner.nextLine().trim().toLowerCase();
 
-                try {
-                    vendorThread.join();
-                    customerThread.join();
-                } catch (InterruptedException e) {
-                    Logger.logError("System interrupted: " + e.getMessage());
-                }
-
-                System.out.println("Processing complete. Restart? (yes/no):");
-                if ("no".equalsIgnoreCase(configuration.getScanner().next().trim())) {
-                    System.out.println("Shutting down...");
-                    Logger.log("System stopped by user.");
-                    break;
-                }
+            if (choice.equals("yes") && config.loadConfigurationFromFile()) {
+                Logger.info("Using configuration from file.");
             } else {
-                System.out.println("Invalid command. Try again.");
+                config.loadConfiguration(scanner);
             }
-        }
+
+            TicketPool ticketPool = new TicketPool(config.getMaxCapacity());
+            Logger.enableLogging(); // Reset logging for each system run
+
+            Thread vendorThread = new Thread(new Vendor(ticketPool, config.getTicketReleaseRate()));
+            Thread customerThread = new Thread(new Customer(ticketPool, config.getTicketRetrievalRate()));
+
+            vendorThread.start();
+            customerThread.start();
+
+            System.out.println("System is running. Press Enter to terminate the system.");
+            scanner.nextLine();
+
+            vendorThread.interrupt();
+            customerThread.interrupt();
+
+            try {
+                vendorThread.join();
+                customerThread.join();
+            } catch (InterruptedException e) {
+                Logger.error("Error while stopping threads: " + e.getMessage());
+            }
+
+            Logger.info("System terminated.");
+
+            System.out.print("\nDo you want to restart the system? (yes/no): ");
+        } while (scanner.nextLine().trim().equalsIgnoreCase("yes"));
+
+        System.out.println("\nThank you for using our service. Have a nice day!");
     }
 }
+
 
