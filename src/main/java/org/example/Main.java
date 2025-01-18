@@ -47,7 +47,7 @@ public class Main {
 
             Logger.info("System terminated.");
 
-            System.out.print("Do you want to restart the system? (yes/no): ");
+            System.out.print("\nDo you want to restart the system? (yes/no): ");
         } while (scanner.nextLine().trim().equalsIgnoreCase("yes"));
 
         System.out.println("\nThank you for using our service. Have a nice day!");

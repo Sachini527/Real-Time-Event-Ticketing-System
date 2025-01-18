@@ -1,5 +1,8 @@
 package org.example;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonIOException;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -41,27 +44,55 @@ public class Configuration {
         }
     }
 
+//    public void saveConfiguration() {
+//        try (BufferedWriter writer = new BufferedWriter(new FileWriter("config.txt"))) {
+//            writer.write(totalTickets + "\n");
+//            writer.write(ticketReleaseRate + "\n");
+//            writer.write(ticketRetrievalRate + "\n");
+//            writer.write(maxCapacity + "\n");
+//            Logger.info("Configuration saved successfully to config.txt.");
+//        } catch (IOException e) {
+//            Logger.error("Failed to save configuration: " + e.getMessage());
+//        }
+//    }
+//
+//    public boolean loadConfigurationFromFile() {
+//        try (BufferedReader reader = new BufferedReader(new FileReader("config.txt"))) {
+//            totalTickets = Integer.parseInt(reader.readLine());
+//            ticketReleaseRate = Integer.parseInt(reader.readLine());
+//            ticketRetrievalRate = Integer.parseInt(reader.readLine());
+//            maxCapacity = Integer.parseInt(reader.readLine());
+//            Logger.info("Configuration loaded successfully from config.txt.");
+//            return true;
+//        } catch (IOException | NumberFormatException e) {
+//            Logger.error("Failed to load configuration: " + e.getMessage());
+//            return false;
+//        }
+//    }
+
+    private static final String CONFIG_FILE = "config.json";
+
     public void saveConfiguration() {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("config.txt"))) {
-            writer.write(totalTickets + "\n");
-            writer.write(ticketReleaseRate + "\n");
-            writer.write(ticketRetrievalRate + "\n");
-            writer.write(maxCapacity + "\n");
-            Logger.info("Configuration saved successfully to config.txt.");
+        Gson gson = new Gson();
+        try (Writer writer = new FileWriter(CONFIG_FILE)) {
+            gson.toJson(this, writer);
+            Logger.info("Configuration saved successfully to " + CONFIG_FILE);
         } catch (IOException e) {
             Logger.error("Failed to save configuration: " + e.getMessage());
         }
     }
 
     public boolean loadConfigurationFromFile() {
-        try (BufferedReader reader = new BufferedReader(new FileReader("config.txt"))) {
-            totalTickets = Integer.parseInt(reader.readLine());
-            ticketReleaseRate = Integer.parseInt(reader.readLine());
-            ticketRetrievalRate = Integer.parseInt(reader.readLine());
-            maxCapacity = Integer.parseInt(reader.readLine());
-            Logger.info("Configuration loaded successfully from config.txt.");
+        Gson gson = new Gson();
+        try (Reader reader = new FileReader(CONFIG_FILE)) {
+            Configuration config = gson.fromJson(reader, Configuration.class);
+            this.totalTickets = config.totalTickets;
+            this.ticketReleaseRate = config.ticketReleaseRate;
+            this.ticketRetrievalRate = config.ticketRetrievalRate;
+            this.maxCapacity = config.maxCapacity;
+            Logger.info("Configuration loaded successfully from " + CONFIG_FILE);
             return true;
-        } catch (IOException | NumberFormatException e) {
+        } catch (IOException | JsonIOException e) {
             Logger.error("Failed to load configuration: " + e.getMessage());
             return false;
         }
