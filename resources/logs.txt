@@ -1,0 +1,104 @@
+Dec 09, 2024 09:01:50 PM INFO: Welcome to the Real-Time Ticket Management System!
+Dec 09, 2024 09:01:50 PM INFO: Would you like to load the existing configuration from file? (yes/no): 
+Dec 09, 2024 09:01:57 PM INFO: Enter total tickets (must be greater than 0): 
+Dec 09, 2024 09:02:40 PM INFO: Enter ticket release rate (must be greater than 0): 
+Dec 09, 2024 09:02:44 PM INFO: Enter customer retrieval rate (must be greater than 0): 
+Dec 09, 2024 09:02:45 PM INFO: Enter max ticket capacity (must be greater than total tickets): 
+Dec 09, 2024 09:02:49 PM WARNING: Invalid input. Please try again.
+Dec 09, 2024 09:02:49 PM INFO: Enter total tickets (must be greater than 0): 
+Dec 09, 2024 09:03:16 PM INFO: Enter ticket release rate (must be greater than 0): 
+Dec 09, 2024 09:03:19 PM INFO: Enter customer retrieval rate (must be greater than 0): 
+Dec 09, 2024 09:03:20 PM INFO: Enter max ticket capacity (must be greater than total tickets): 
+Dec 09, 2024 09:03:23 PM INFO: Configuration saved successfully to config.txt.
+Dec 09, 2024 09:03:23 PM INFO: Ticket System Started successfully.
+Dec 09, 2024 09:03:23 PM INFO: Starting vendor and customer threads...
+Dec 09, 2024 09:03:23 PM INFO: System is running. Enter 'stop' to terminate the system.
+Dec 09, 2024 09:03:23 PM INFO: 4 tickets added. Available tickets: 14
+Dec 09, 2024 09:03:23 PM INFO: 2 tickets sold. Available tickets: 12
+Dec 09, 2024 09:03:24 PM INFO: 2 tickets sold. Available tickets: 10
+Dec 09, 2024 09:03:24 PM INFO: 4 tickets added. Available tickets: 14
+Dec 09, 2024 09:03:25 PM INFO: 2 tickets sold. Available tickets: 12
+Dec 09, 2024 09:03:25 PM INFO: 4 tickets added. Available tickets: 16
+Dec 09, 2024 09:03:26 PM INFO: 2 tickets sold. Available tickets: 14
+Dec 09, 2024 09:03:26 PM INFO: 4 tickets added. Available tickets: 18
+Dec 09, 2024 09:03:27 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:27 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:28 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:28 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:29 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:29 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:30 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:30 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:31 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:31 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:32 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:32 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:33 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:33 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:34 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:34 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:35 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:35 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:36 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:36 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:37 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:37 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:38 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:38 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:39 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:39 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:40 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:40 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:41 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:41 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:42 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:42 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:43 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:43 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:44 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:44 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:45 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:45 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:46 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:46 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:47 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:47 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:48 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:48 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:49 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:49 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:50 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:50 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:51 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:51 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:52 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:52 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:53 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:53 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:54 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:54 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:55 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:55 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:56 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:56 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:57 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:57 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:03:58 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:03:58 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:03:59 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:03:59 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:04:00 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:04:00 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:04:01 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:04:01 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:04:02 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:04:02 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:04:03 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:04:03 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:04:04 PM INFO: 2 tickets sold. Available tickets: 18
+Dec 09, 2024 09:04:04 PM WARNING: Cannot add tickets. Exceeds max capacity.
+Dec 09, 2024 09:04:05 PM INFO: 2 tickets sold. Available tickets: 16
+Dec 09, 2024 09:04:05 PM INFO: 4 tickets added. Available tickets: 20
+Dec 09, 2024 09:04:05 PM WARNING: Vendor thread was interrupted.
+Dec 09, 2024 09:04:05 PM WARNING: Customer thread was interrupted.
+Dec 09, 2024 09:04:05 PM INFO: Ticket System Stopped successfully.
