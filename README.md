@@ -1,0 +1,1 @@
+A high-performance CLI application built for managing event ticket distribution with real-time processing and robust concurrency handling. Designed to support multiple vendors and customers simultaneously, it features multi-threaded operations, real-time logging, and seamless configuration management, ensuring reliability under heavy load.
